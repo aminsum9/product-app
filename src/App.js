@@ -6,30 +6,28 @@ import Register from "./pages/register.js";
 import Home from "./pages/home.js";
 
 var localToken = localStorage.getItem('token');
-
 if (localToken) {
-
-    var App = createBrowserRouter([
-      {
-        path: "/",
-        element: <Home />
-      },
-    ]);
-
- } else {
-
+  
+  var App = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+  ]);
+  
+} else {
   var App = createBrowserRouter([
     {
       path: "/",
       element: <Login />
     },
     {
-      path: "/",
+      path: "/register",
       element: <Register />
     },
   ]);
 }
 
-    
+
 
 export default App;
