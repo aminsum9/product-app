@@ -3,7 +3,7 @@ export const dataDummy = [
         id: 1,
         name: "Dompet",
         sku: "1234",
-        desc: "dompet bagus",
+        desc: "<p>dompet bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -17,7 +17,7 @@ export const dataDummy = [
         id: 2,
         name: "Tas",
         sku: "1234",
-        desc: "tas bagus",
+        desc: "<p>tas bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -31,7 +31,7 @@ export const dataDummy = [
         id: 3,
         name: "Smartphone",
         sku: "1234",
-        desc: "smartphone bagus",
+        desc: "<p>smartphone bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -45,7 +45,7 @@ export const dataDummy = [
         id: 4,
         name: "Baju",
         sku: "1234",
-        desc: "baju bagus",
+        desc: "<p>baju bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -59,7 +59,7 @@ export const dataDummy = [
         id: 5,
         name: "Celana",
         sku: "1234",
-        desc: "celana bagus",
+        desc: "<p>celana bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -73,7 +73,7 @@ export const dataDummy = [
         id: 6,
         name: "Topi",
         sku: "1234",
-        desc: "topi bagus",
+        desc: "<p>topi bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -87,7 +87,7 @@ export const dataDummy = [
         id: 7,
         name: "Kerudung",
         sku: "1234",
-        desc: "kerudung bagus",
+        desc: "<p>kerudung bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -101,7 +101,7 @@ export const dataDummy = [
         id: 8,
         name: "Sarung Tangan",
         sku: "1234",
-        desc: "sarung tangan bagus",
+        desc: "<p>sarung tangan bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -115,7 +115,7 @@ export const dataDummy = [
         id: 9,
         name: "Celana Panjang",
         sku: "1234",
-        desc: "celana panjang bagus",
+        desc: "<p>celana panjang bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -129,7 +129,7 @@ export const dataDummy = [
         id: 10,
         name: "sabuk",
         sku: "1234",
-        desc: "sabuk bagus",
+        desc: "<p>sabuk bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -143,7 +143,7 @@ export const dataDummy = [
         id: 11,
         name: "motor",
         sku: "1234",
-        desc: "motor bagus",
+        desc: "<p>motor bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -157,7 +157,7 @@ export const dataDummy = [
         id: 12,
         name: "mobil",
         sku: "1234",
-        desc: "mobil bagus",
+        desc: "<p>mobil bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -171,7 +171,7 @@ export const dataDummy = [
         id: 13,
         name: "Galon",
         sku: "1234",
-        desc: "galon bagus",
+        desc: "<p>galon bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -185,7 +185,7 @@ export const dataDummy = [
         id: 14,
         name: "lampu merah",
         sku: "1234",
-        desc: "lampu merah bagus",
+        desc: "<p>lampu merah bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -199,7 +199,7 @@ export const dataDummy = [
         id: 15,
         name: "Korden",
         sku: "1234",
-        desc: "korden bagus",
+        desc: "<p>korden bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -213,7 +213,7 @@ export const dataDummy = [
         id: 16,
         name: "Sepatu biru",
         sku: "1234",
-        desc: "Sepatu biru bagus",
+        desc: "<p>Sepatu biru bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -227,7 +227,7 @@ export const dataDummy = [
         id: 17,
         name: "Sandal jepit",
         sku: "1234",
-        desc: "sandal jepit bagus",
+        desc: "<p>sandal jepit bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -241,7 +241,7 @@ export const dataDummy = [
         id: 18,
         name: "Baju kemeja",
         sku: "1234",
-        desc: "baju kemeja bagus",
+        desc: "<p>baju kemeja bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -255,7 +255,7 @@ export const dataDummy = [
         id: 19,
         name: "Baju Koko",
         sku: "1234",
-        desc: "baju koko bagus",
+        desc: "<p>baju koko bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -269,7 +269,7 @@ export const dataDummy = [
         id: 20,
         name: "Peci",
         sku: "1234",
-        desc: "peci bagus",
+        desc: "<p>peci bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -283,7 +283,7 @@ export const dataDummy = [
         id: 21,
         name: "Sarung",
         sku: "1234",
-        desc: "sarung bagus",
+        desc: "<p>sarung bagus</p>",
         brand: "ABC",
         variant: [
             {
@@ -293,217 +293,6 @@ export const dataDummy = [
             },
         ]
     },
-    // 
-    {
-        id: 22,
-        name: "Dompet",
-        sku: "1234",
-        desc: "dompet bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 23,
-        name: "Tas",
-        sku: "1234",
-        desc: "tas bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 24,
-        name: "Smartphone",
-        sku: "1234",
-        desc: "smartphone bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 25,
-        name: "Dompet",
-        sku: "1234",
-        desc: "dompet bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 26,
-        name: "Tas",
-        sku: "1234",
-        desc: "tas bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 27,
-        name: "Smartphone",
-        sku: "1234",
-        desc: "smartphone bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 28,
-        name: "Dompet",
-        sku: "1234",
-        desc: "dompet bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 29,
-        name: "Tas",
-        sku: "1234",
-        desc: "tas bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 30,
-        name: "Smartphone",
-        sku: "1234",
-        desc: "smartphone bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 31,
-        name: "Dompet",
-        sku: "1234",
-        desc: "dompet bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 32,
-        name: "Tas",
-        sku: "1234",
-        desc: "tas bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 33,
-        name: "Smartphone",
-        sku: "1234",
-        desc: "smartphone bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 34,
-        name: "Dompet",
-        sku: "1234",
-        desc: "dompet bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 35,
-        name: "Tas",
-        sku: "1234",
-        desc: "tas bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    },
-    {
-        id: 36,
-        name: "Smartphone",
-        sku: "1234",
-        desc: "smartphone bagus",
-        brand: "ABC",
-        variant: [
-            {
-                name: "Warna Biru",
-                sku: "12345",
-                harga_jual: 10000
-            },
-        ]
-    }
 ]
 
 class ProductServices {

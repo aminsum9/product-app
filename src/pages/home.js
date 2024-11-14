@@ -5,6 +5,26 @@ import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import {
+    ClassicEditor,
+    Bold,
+    Essentials,
+    Heading,
+    Indent,
+    IndentBlock,
+    Italic,
+    Link,
+    List,
+    MediaEmbed,
+    Paragraph,
+    Table,
+    Undo
+  } from 'ckeditor5';
+  
+  import 'ckeditor5/ckeditor5.css';
+  
+
 function Home() {
     var [page, setPage] = React.useState(1);
     var [perPage, setPerPage] = React.useState(10);
@@ -17,6 +37,11 @@ function Home() {
     var [modalAddProduct, showModalAddProduct] = React.useState(false);
     var [modalDeleteProduct, showModalDeleteProduct] = React.useState(false);
     var [modalEditProduct, showModalEditProduct] = React.useState(false);
+
+    const createMarkup = () => {
+        return { __html: itemDetail?.desc || null };
+    }
+
     // add product
     var [brands, setBrands] = React.useState(['ABC', 'Kelinci Putih', 'Ular Kobra'])
     var [newName, setNewName] = React.useState('');
@@ -350,7 +375,8 @@ function Home() {
                     <input disabled value={"Name: " + itemDetail?.name} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="name" />
                     <input disabled value={"SKU: " + itemDetail?.sku} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="SKU" />
                     <input disabled value={"Brand: " + itemDetail.brand} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="brand" />
-                    <textarea disabled value={"Description: " + itemDetail.desc} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="desc" />
+                    <p className='mt-2' >Description:</p>
+                    <div  dangerouslySetInnerHTML={createMarkup()} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
                     <br />
                     {itemDetail.variant != null && (
                         <div>
@@ -389,7 +415,7 @@ function Home() {
                     <br />
                     <input value={newName} onChange={(e) => setNewName(e.target.value)} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Name" />
                     <input value={newSKU} type="text" onChange={(e) => setNewSKU(e.target.value)} className="mt-2 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="SKU" />
-                    <div className='ms-1' >
+                    <div className='ms-1 mb-2' >
                         <p>Brand:</p>
                         <select defaultValue={''} id="brand" onChange={(e) => setNewBrand(e.target.value)} className="mt-1 bg-gray-50 w-[200px] mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value={""}>-- Select Brand --</option>
@@ -398,9 +424,37 @@ function Home() {
                             })}
                         </select>
                     </div>
-                    <textarea value={desc} onChange={(e) => setDesc(e.target.value)} className="mt-1 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="description" />
+                    <CKEditor
+                        editor={ ClassicEditor }
+                        onChange={(event, editor) => {
+                            setDesc(editor.getData())
+                        }}
+                        config={ {
+                            toolbar: [
+                            'undo', 'redo', '|',
+                            'heading', '|', 'bold', 'italic', '|',
+                            'link', 'insertTable', 'mediaEmbed', '|',
+                            'bulletedList', 'numberedList', 'indent', 'outdent'
+                            ],
+                            plugins: [
+                            Bold,
+                            Essentials,
+                            Heading,
+                            Indent,
+                            IndentBlock,
+                            Italic,
+                            Link,
+                            List,
+                            MediaEmbed,
+                            Paragraph,
+                            Table,
+                            Undo
+                            ],
+                            initialData: '',
+                        } }
+                    />
                     <div>
-                        <h6 className='mb-1' >Variant: </h6>
+                        <h6 className='mt-2 mb-1' >Variant: </h6>
                         {newVariants.map((item, index) => {
                             return (
                                 <div key={index} className="flex flex-col w-full mb-2 border-2 border-inherit rounded-sm border-solid p-1" >
@@ -421,7 +475,7 @@ function Home() {
                     </button>
                 </div>
             </Modal>
-              {/* modal delete product */}
+              {/* modal edit product */}
               <Modal
                 isOpen={modalEditProduct}
                 style={modalDetailStyles}
@@ -445,7 +499,36 @@ function Home() {
                             })}
                         </select>
                     </div>
-                    <textarea value={editedDesc} onChange={(e) => setEditedDesc(e.target.value)} className="mt-1 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="description" />
+                    {/* <textarea value={editedDesc} onChange={(e) => setEditedDesc(e.target.value)} className="mt-1 w-full mx-0 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="description" /> */}
+                    <CKEditor
+                        editor={ ClassicEditor }
+                        onChange={(event, editor) => {
+                            setEditedDesc(editor.getData())
+                        }}
+                        config={ {
+                            toolbar: [
+                            'undo', 'redo', '|',
+                            'heading', '|', 'bold', 'italic', '|',
+                            'link', 'insertTable', 'mediaEmbed', '|',
+                            'bulletedList', 'numberedList', 'indent', 'outdent'
+                            ],
+                            plugins: [
+                            Bold,
+                            Essentials,
+                            Heading,
+                            Indent,
+                            IndentBlock,
+                            Italic,
+                            Link,
+                            List,
+                            MediaEmbed,
+                            Paragraph,
+                            Table,
+                            Undo
+                            ],
+                            initialData: editedDesc,
+                        } }
+                    />
                     <div>
                         <h6 className='mb-1' >Variant: </h6>
                         {editedVariants.map((item, index) => {
