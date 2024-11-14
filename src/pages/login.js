@@ -2,6 +2,7 @@ import * as React from 'react';
 import AuthServices from '../services/AuthServices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { dataDummy } from '../services/ProductServices';
 
 function Login() {
 
@@ -9,6 +10,9 @@ function Login() {
     var [password, setPassword] = React.useState('');
 
     const handleLogin = async () => {
+
+        localStorage.setItem('products',JSON.stringify(dataDummy))
+
         var body = {
             email: email,
             password: password

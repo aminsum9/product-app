@@ -2,8 +2,11 @@ import * as React from 'react';
 import AuthServices from '../services/AuthServices';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { dataDummy } from '../services/ProductServices';
 
 function Register() {
+
+    localStorage.setItem('products',JSON.stringify(dataDummy))
 
     var [name, setName] = React.useState('');
     var [email, setEmail] = React.useState('');
@@ -34,6 +37,7 @@ function Register() {
 
     return (
         <div className="flex h-[100vh]" >
+            <ToastContainer />
             <div className="w-3/5 bg-[#fcba03]">
                 {/*  */}
             </div>
