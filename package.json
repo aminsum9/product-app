@@ -1,7 +1,7 @@
 {
+  "homepage": "https://aminsum9.github.io/product-app/",
   "name": "product-app",
   "version": "0.1.0",
-  "homepage": "https://aminsum9.github.io/product-app",
   "private": true,
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^9.3.1",
